@@ -19,23 +19,15 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
+
 # Add Zsh to the list of shells
 if ! grep -q $(which zsh) /etc/shells; then
     sudo sh -c 'which zsh >> /etc/shells'
-
-    # Make ZSH the default shell environment
-    chsh -s $(which zsh)
 fi
 
-# Install Composer
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-
-# Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet psy/psysh
-
-# Install Laravel Valet
-$HOME/.composer/vendor/bin/valet install
+if ! grep -q $(which fish) /etc/shells; then
+    sudo sh -c 'which fish >> /etc/shells'
+fi
 
 # Install VirtualEnv and VirtualEnvWrapper
 pip3 install virtualenv
@@ -44,8 +36,8 @@ pip3 install virtualenvwrapper
 # Install global NPM packages
 npm install --global yarn
 
-# Create my code directory
-mkdir $HOME/Code
+# Create my Projects directory
+mkdir $HOME/Projects
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
@@ -54,7 +46,7 @@ ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 # Symlink the Mackup config file to the home directory
 ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
-# Set my global gitignore
+# # Set my global gitignore
 git config --global core.excludesfile $HOME/.dotfiles/.gitignore_global
 
 # Set macOS preferences

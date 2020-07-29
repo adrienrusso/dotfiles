@@ -10,6 +10,7 @@ brew 'cloc'             # to quickly count lines of code
 brew 'coreutils'        # Those that come with macOS are outdated
 brew 'curl'
 brew 'docker-compose'   # Docker without the hassle
+brew 'fish'
 brew 'gnu-sed'          # sed, but a better version than what ships with OSX
 brew 'graphviz'         # graph/diagrams generation
 brew 'httpie'           # to test HTTP calls from the CLI
@@ -25,26 +26,20 @@ brew 'zsh-completions'  # more auto-completions for Zsh
 
 # Development
 brew 'bfg'              # for that time the intern added passwords to the repo
-brew 'exercism'         # to submit code solutions to Exercism.io
 brew 'git'              # OSX's version is out of date
 brew 'git-lfs'          # git's large file system
 brew 'node'
-brew 'php72'            # for Laravel/Symfony dev
 
 brew 'awscli'
 brew 'jq'
 brew 'python'
-brew 'postgresql@9.6', restart_service: true, link: true
-brew 'redis'
+brew 'postgresql', restart_service: true, link: true
 brew 'libjpeg'
 brew 'libpng'
 brew 'libmagic'
-cask 'java8'        # required to install elasticsearch
-brew 'elasticsearch'
-brew 'redis'
-brew 'memcached'
 brew 'gettext'      # to compile messages, don't forget to link!
 brew 'libmaxminddb' # for GeoIP
+brew 'pyenv'
 
 # Pentesting / CTF / Forensics
 brew 'binwalk'          # search for files hidden via steganography
@@ -59,9 +54,7 @@ brew 'pngcheck'
 brew 'sqlmap'           # SQL injection
 brew 'wpscan'           # WordPress vulnerability scanner
 brew 'zbar'             # barcode /qrcode reading
-cask 'audacity'
 cask 'hex-fiend'        # a simple GUI hex editor
-cask 'sonic-visualizer'
 
 # Apps
 cask 'caffeine'         # when I don't want my computer to fall asleep
@@ -72,18 +65,14 @@ cask 'google-chrome'
 cask 'imagealpha'       # optimize transparent PNGs
 cask 'imageoptim'       # optimize images
 cask 'iterm2'           # a better terminal
-cask 'ksdiff'           # CLI launcher for my difftool (Kaleidoscope)
-cask 'phpstorm'
-cask 'pycharm-ce'
-cask 'sequel-pro'
 cask 'slack'
-cask 'spectacle'        # no better ways to move windows around
 cask 'sublime-text'
 cask 'the-unarchiver'
 cask 'intellij-idea'
 cask 'gpg-suite'
-cask 'keybase'
 cask 'paw'
+cask 'spotify'
+cask 'zoom'
 
 # Quicklook
 cask 'betterzip'        # preview zip archives
@@ -103,11 +92,6 @@ cask 'font-fira-code'
 # Install Mac App Store apps
 mas '1Password', id: 1333542190     # password manager
 mas 'Annotate', id: 918207447       # annotate screenshots like a boss
-mas 'Bear', id: 1091189122          # note taking app
-mas 'Deliveries', id: 924726344     # package tracking
-mas 'Kaleidoscope', id: 587512244   # the best difftool ever, fight me
-mas 'Pastebot', id: 1179623856
-mas 'Pixelmator', id: 407963104
-mas 'Reeder', id: 880001334         # nope, RSS is not dead
-mas 'Soulver', id: 413965349
-mas 'Tweetbot', id: 557168941       # less and less powerful Twitter client (not their fault though!)
+mas 'Quiver', id: 866773894       # note taking app
+mas 'Copy\'em Paste', id: 876540291
+mas 'Moom', id: 419330170 #window manager
